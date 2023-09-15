@@ -1,10 +1,10 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
 #pool:
- #name: Ubuntu-Agent
+  #vmImage: ubuntu-latest
+pool:
+ name: Ubuntu-Agent
 
 # Setting variables
 variables:
@@ -67,8 +67,8 @@ stages:
       - deployment: DeployDevAKSCluster
         displayName: DeployDevAKSCluster
         pool:
-         vmImage: ubuntu-latest
-         #name: Ubuntu-Agent
+         #vmImage: ubuntu-latest
+         name: Ubuntu-Agent
         environment: $(DEV_ENVIRONMENT)
         strategy:
          runOnce:
